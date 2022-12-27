@@ -3,12 +3,163 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
+    <title>Road To Orion</title>
+    <link rel="stylesheet" href="./src/index.css">
     <script type="module" src="./src/script/firebase.js"></script>
+    <script defer src="./src/script/sidebar.js"></script>
   </head>
   <body>
-    <div id="message">
-      <h1>Test</h1>
+    <div id="header">
+      <h1 id="logo">Road<span style="color:#00FF38">To</span>Orion</h1>
+    </div>
+    <div id="sitebody">
+      <div id="sidebar">
+        <div id="sidebarentries">
+          <p id="arbutton">Assault Rifles</p>
+          <div class="collapse" id="arlist">
+            <p id="m4list">M4</p>
+            <p id="taq56list">TAQ-56</p>
+            <p id="kastov762list">Kastov 762</p>
+            <p id="lachman556list">Lachmann-556</p>
+            <p id="stb556list">STB 556</p>
+            <p id="m16list">M16</p>
+            <p id="kastov74ulist">Kastov-74U</p>
+            <p id="kastov545list">Kastov 545</p>
+            <p id="chimeralist">Chimera</p>
+            <p id="m13blist">M13B</p>
+          </div>
+          <p id="brbutton">Battle Rifles</p>
+          <div class="collapse" id="brlist">
+            <p id="lachman652list">Lachmann-762</p>
+            <p id="so14list">SO-14</p>
+            <p id="taqvlist">TAQ-V</p>
+            <p id="ftacreconlist">FTAC Recon</p>
+          </div>
+          <p id="smgbutton">SMGs</p>
+          <div class="collapse" id="smglist">
+            <p id="vel46list">VEL 46</p>
+            <p id="mx9list">MX9</p>
+            <p id="mp5list">Lachman Sub</p>
+            <p id="vaznevlist">Vaznev-9K</p>
+            <p id="fsshurricanelist">FSS Hurricane</p>
+            <p id="minibaklist">Minibak</p>
+            <p id="basplist">BAS-P</p>
+            <p id="p90list">PDSW 528</p>
+            <p id="fenneclist">Fennec 45</p>
+          </div>
+          <p id="shotgunbutton">Shotguns</p>
+          <div class="collapse" id="shotgunlist">
+            <p id="lockwood300list">Lockwood 300</p>
+            <p id="expedite12list">Expedite 12</p>
+            <p id="bryson800list">Bryson 800</p>
+            <p id="bryson890list">Bryson 890</p>
+          </div>
+          <p id="lmgbutton">LMGs</p>
+          <div class="collapse" id="lmglist">
+            <p id="mg38list">Sakin MG38</p>
+            <p id="hcr56list">HCR 56</p>
+            <p id="556icaruslist">556 Icarus</p>
+            <p id="raalmglist">RAAL MG</p>
+            <p id="rpklist">RPK</p>
+            <p id="rapphlist">RAPP H</p>
+          </div>
+          <p id="mrbutton">Marksman Rifles</p>
+          <div class="collapse" id="mrlist">
+            <p id="ebr14list">EBR-14</p>
+            <p id="spr208list">SP-R 208</p>
+            <p id="lockwoodmk2list">Lockwood MK2</p>
+            <p id="lmslist">LM-S</p>
+            <p id="sab50list">SA-B 50</p>
+            <p id="taqmlist">TAQ-M</p>
+          </div>
+          <p id="sniperbutton">Sniper Rifles</p>
+          <div class="collapse" id="sniperlist">
+            <p id="mcpr300list">MCPR-300</p>
+            <p id="xmrlist">Victus XMR</p>
+            <p id="signal50list">Signal 50</p>
+            <p id="lab330list">LA-B 330</p>
+            <p id="spx80list">SP-X 80</p>
+          </div>
+          <p id="meleebutton">Melee</p>
+          <div class="collapse" id="meleelist">
+            <p id="riotshieldlist">Riot Shield</p>
+            <p id="knifelist">Combat Knife</p>
+          </div>
+          <p id="handgunbutton">Handguns</p>
+          <div class="collapse" id="handgunlist">
+            <p id="p890list">P890</p>
+            <p id="deaglelist">.50 GS</p>
+            <p id="x12list">X12</p>
+            <p id="revolverlist">Basilisk</p>
+            <p id="x13autolist">X13 Auto</p>
+          </div>
+          <p id="launcherbutton">Launchers</p>
+          <div class="collapse" id="launcherlist">
+            <p id="pilalist">PILA</p>
+            <p id="strelaplist">STRELA-P</p>
+            <p id="jokrlist">JOKR</p>
+            <p id="rpglist">RPG-7</p>
+          </div>
+        </div>
+      </div>
+      <div id="sitecontent">
+        <div class="gun" id="m4-content">
+          <h1>M4</h1>
+          <div class="camos">
+            <div class="camobutton" id="m41">
+              <p><strong>Scales</strong></p>
+              <div>
+                <img src="./src/img/ar/m4/m41.jpg">
+              </div>
+              <p>Get 50 kills</p>
+            </div>
+            <div class="camobutton" id="m42">
+              <p><strong>Desert Hybrid</strong></p>
+              <div>
+                <img src="./src/img/ar/m4/m42.jpg">
+              </div>
+              <p>Get 50 kills while ADS</p> 
+            </div>
+            <div class="camobutton" id="m43">
+              <p><strong>Dark Leaves</strong></p>
+              <div>
+                <img src="./src/img/ar/m4/m43.jpg">
+              </div>
+              <p>Get 10 double kills</p>
+            </div>
+            <div class="camobutton" id="m44">
+              <p><strong>New Urban</strong></p>
+              <div>
+                <img src="./src/img/ar/m4/m44.jpg">
+              </div>
+              <p>Get 15 kills from behind</p>
+            </div>
+          </div>
+          <div class="camos">
+            <div class="camobutton" id="m4gold">
+              <p><strong>Gold</strong></p>
+              <div>
+                <img src="./src/img/uni/gold.jpg">
+              </div>
+              <p>Get 3 kills without dying 10 times</p>
+            </div>
+            <div class="camobutton" id="m4gold">
+              <p><strong>Platinum</strong></p>
+              <div>
+                <img src="./src/img/uni/plat.jpg">
+              </div>
+              <p>Get 25 longshots</p>
+            </div>
+            <div class="camobutton" id="m4poly">
+              <p><strong>Polyatomic</strong></p>
+              <div>
+                <img src="./src/img/uni/poly.jpg">
+              </div>
+              <p>Get 25 headshots</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
 </html>

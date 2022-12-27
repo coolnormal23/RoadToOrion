@@ -1,0 +1,120 @@
+@font-face {
+    font-family: inter;
+    src: url(./inter.ttf)
+}
+
+img {
+    height:128px;
+    width:128px;
+}
+
+html {
+    height:100%;
+}
+
+* {
+    font-family:inter;
+    overflow:hidden;
+}
+
+h1 {
+    color:white;
+    margin-left:5px;
+}
+
+#sitecontent h1 {
+    text-align:center;
+}
+
+#sitecontent p {
+    text-align:center;
+}
+
+p {
+    color:white;
+    margin-left:5px;
+}
+
+body {
+    background-color:#212121;
+    margin:0px;
+    height:100%;
+}
+
+.gun {
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-content:center;
+    flex-wrap:wrap;
+}
+
+.collapse {
+    display:none;
+}
+
+.camos {
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+    margin-bottom:5px;
+}
+
+.camobutton {
+    background-color:#5E5E5E;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    padding:15px;
+    margin-right:5px;
+    width:250px;
+}
+
+#header {
+    width:100%;
+    background-color:#383838;
+}
+
+#sidebar {
+    height:100%;
+    background-color:#383838;
+    padding:10px;
+    padding-left:25px;
+    padding-right:25px;
+    display:flex;
+    justify-content:center;
+}
+
+#sidebarentries {
+    display:flex;
+    flex-direction:column;
+    justify-content:left;
+}
+
+#sidebarentries p {
+    margin:0px;
+    margin-bottom:10px;
+    padding:0px;
+}
+
+#arlist, #brlist, #smglist, #lmglist, #shotgunlist, #mrlist, #sniperlist, #meleelist, #handgunlist, #launcherlist p {
+    margin-left:10px;
+}
+
+#sitecontent {
+    display:flex;
+    flex-direction:column;
+    align-content:center;
+    width:100%;
+}
+
+#sitebody {
+    display:flex;
+    flex-direction:row;
+    height:100%;
+}
+
+#logo {
+    margin-left:25px;
+}
