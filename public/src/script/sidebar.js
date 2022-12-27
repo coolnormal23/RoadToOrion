@@ -1,6 +1,7 @@
 lastselect = "m4list";
 lastparent = "arbutton";
-lastlist = "arlist"
+lastlist = "arlist";
+lastlist2 = "m4-content";
 
 function undoAll()
 {
@@ -8,6 +9,7 @@ function undoAll()
     document.getElementById(lastselect).style.fontWeight="normal";
     document.getElementById(lastparent).style.fontWeight="normal";
     document.getElementById(lastlist).style.display="none";
+    document.getElementById(lastlist2).style.display="none";
 }
 
 function showMenu(id)
@@ -154,9 +156,250 @@ function showMenu(id)
                 lastlist = "launcherlist";
                 break;
             }
+        case "m4-content":
+            {
+                var select = "m4-content";
+                var parent = "arbutton";
+                var list = "arlist";
+                var list2 = "m4list";
+
+                //unbold and undo
+                undoAll();
+                //show site content
+                document.getElementById(select).style.display="flex";
+                //show gun list
+                document.getElementById(list).style.display="block";
+                //bold button
+                document.getElementById(parent).style.fontWeight="bold";
+                //bold subbuttom
+                document.getElementById(list2).style.fontWeight="bold";
+
+                lastselect = list2;
+                lastparent = parent;
+                lastlist = list;
+                lastlist2 = select;
+                break;
+            }
+        case "taq56-content":
+            {
+                var select = "taq56-content";
+                var parent = "arbutton";
+                var list = "arlist";
+                var list2 = "taq56list";
+
+                //unbold and undo
+                undoAll();
+                //show site content
+                document.getElementById(select).style.display="flex";
+                //show gun list
+                document.getElementById(list).style.display="block";
+                //bold button
+                document.getElementById(parent).style.fontWeight="bold";
+                //bold subbuttom
+                document.getElementById(list2).style.fontWeight="bold";
+
+                lastselect = list2;
+                lastparent = parent;
+                lastlist = list;
+                lastlist2 = select;
+                break;
+            }
+        case "kastov762-content":
+            {
+                var select = "kastov762-content";
+                var parent = "arbutton";
+                var list = "arlist";
+                var list2 = "kastov762list";
+
+                //unbold and undo
+                undoAll();
+                //show site content
+                document.getElementById(select).style.display="flex";
+                //show gun list
+                document.getElementById(list).style.display="block";
+                //bold button
+                document.getElementById(parent).style.fontWeight="bold";
+                //bold subbuttom
+                document.getElementById(list2).style.fontWeight="bold";
+
+                lastselect = list2;
+                lastparent = parent;
+                lastlist = list;
+                lastlist2 = select;
+                break;
+            }
+        case "lachman556-content":
+            {
+                var select = "lachman556-content";
+                var parent = "arbutton";
+                var list = "arlist";
+                var list2 = "lachman556list";
+
+                //unbold and undo
+                undoAll();
+                //show site content
+                document.getElementById(select).style.display="flex";
+                //show gun list
+                document.getElementById(list).style.display="block";
+                //bold button
+                document.getElementById(parent).style.fontWeight="bold";
+                //bold subbuttom
+                document.getElementById(list2).style.fontWeight="bold";
+
+                lastselect = list2;
+                lastparent = parent;
+                lastlist = list;
+                lastlist2 = select;
+                break;
+            }
+        case "stb556-content":
+            {
+                var select = "stb556-content";
+                var parent = "arbutton";
+                var list = "arlist";
+                var list2 = "stb556list";
+
+                //unbold and undo
+                undoAll();
+                //show site content
+                document.getElementById(select).style.display="flex";
+                //show gun list
+                document.getElementById(list).style.display="block";
+                //bold button
+                document.getElementById(parent).style.fontWeight="bold";
+                //bold subbuttom
+                document.getElementById(list2).style.fontWeight="bold";
+
+                lastselect = list2;
+                lastparent = parent;
+                lastlist = list;
+                lastlist2 = select;
+                break;
+            }
+        case "m16-content":
+            {
+                var select = "m16-content";
+                var parent = "arbutton";
+                var list = "arlist";
+                var list2 = "m16list";
+
+                //unbold and undo
+                undoAll();
+                //show site content
+                document.getElementById(select).style.display="flex";
+                //show gun list
+                document.getElementById(list).style.display="block";
+                //bold button
+                document.getElementById(parent).style.fontWeight="bold";
+                //bold subbuttom
+                document.getElementById(list2).style.fontWeight="bold";
+
+                lastselect = list2;
+                lastparent = parent;
+                lastlist = list;
+                lastlist2 = select;
+                break;
+            }
+        case "kastov74u-content":
+            {
+                var select = "kastov74u-content";
+                var parent = "arbutton";
+                var list = "arlist";
+                var list2 = "kastov74ulist";
+
+                //unbold and undo
+                undoAll();
+                //show site content
+                document.getElementById(select).style.display="flex";
+                //show gun list
+                document.getElementById(list).style.display="block";
+                //bold button
+                document.getElementById(parent).style.fontWeight="bold";
+                //bold subbuttom
+                document.getElementById(list2).style.fontWeight="bold";
+
+                lastselect = list2;
+                lastparent = parent;
+                lastlist = list;
+                lastlist2 = select;
+                break;
+            }
+        case "kastov545-content":
+            {
+                var select = "kastov545-content";
+                var parent = "arbutton";
+                var list = "arlist";
+                var list2 = "kastov545list";
+
+                //unbold and undo
+                undoAll();
+                //show site content
+                document.getElementById(select).style.display="flex";
+                //show gun list
+                document.getElementById(list).style.display="block";
+                //bold button
+                document.getElementById(parent).style.fontWeight="bold";
+                //bold subbuttom
+                document.getElementById(list2).style.fontWeight="bold";
+
+                lastselect = list2;
+                lastparent = parent;
+                lastlist = list;
+                lastlist2 = select;
+                break;
+            }
+        case "chimera-content":
+            {
+                var select = "chimera-content";
+                var parent = "arbutton";
+                var list = "arlist";
+                var list2 = "chimeralist";
+
+                //unbold and undo
+                undoAll();
+                //show site content
+                document.getElementById(select).style.display="flex";
+                //show gun list
+                document.getElementById(list).style.display="block";
+                //bold button
+                document.getElementById(parent).style.fontWeight="bold";
+                //bold subbuttom
+                document.getElementById(list2).style.fontWeight="bold";
+
+                lastselect = list2;
+                lastparent = parent;
+                lastlist = list;
+                lastlist2 = select;
+                break;
+            }
+        case "m13b-content":
+            {
+                var select = "m13b-content";
+                var parent = "arbutton";
+                var list = "arlist";
+                var list2 = "m13blist";
+
+                //unbold and undo
+                undoAll();
+                //show site content
+                document.getElementById(select).style.display="flex";
+                //show gun list
+                document.getElementById(list).style.display="block";
+                //bold button
+                document.getElementById(parent).style.fontWeight="bold";
+                //bold subbuttom
+                document.getElementById(list2).style.fontWeight="bold";
+
+                lastselect = list2;
+                lastparent = parent;
+                lastlist = list;
+                lastlist2 = select;
+                break;
+            }
     }
 }
 
+//category buttons
 document.getElementById("arbutton").onclick = function() {showMenu("arlist")};
 document.getElementById("brbutton").onclick = function() {showMenu("brlist")};
 document.getElementById("smgbutton").onclick = function() {showMenu("smglist")};
@@ -167,3 +410,15 @@ document.getElementById("sniperbutton").onclick = function() {showMenu("sniperli
 document.getElementById("meleebutton").onclick = function() {showMenu("meleelist")};
 document.getElementById("handgunbutton").onclick = function() {showMenu("handgunlist")};
 document.getElementById("launcherbutton").onclick = function() {showMenu("launcherlist")};
+
+//assault rifles
+document.getElementById("m4list").onclick = function() {showMenu("m4-content")};
+document.getElementById("taq56list").onclick = function() {showMenu("taq56-content")};
+document.getElementById("kastov762list").onclick = function() {showMenu("kastov762-content")};
+document.getElementById("lachman556list").onclick = function() {showMenu("lachman556-content")};
+document.getElementById("stb556list").onclick = function() {showMenu("stb556-content")};
+document.getElementById("m16list").onclick = function() {showMenu("m16-content")};
+document.getElementById("kastov74ulist").onclick = function() {showMenu("kastov74u-content")};
+document.getElementById("kastov545list").onclick = function() {showMenu("kastov545-content")};
+document.getElementById("chimeralist").onclick = function() {showMenu("chimera-content")};
+document.getElementById("m13blist").onclick = function() {showMenu("m13b-content")};
