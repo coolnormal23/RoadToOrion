@@ -2,6 +2,7 @@ lastselect = "m4list";
 lastparent = "arbutton";
 lastlist = "arlist";
 lastlist2 = "m4-content";
+camocount = 0;
 
 function undoAll()
 {
@@ -398,6 +399,43 @@ function showMenu(id)
             }
     }
 }
+
+function undoClick(object)
+{
+    if(object.classList.contains('clicked'))
+    {
+        object.onclick = object.classList.remove('clicked');
+        object.classList.add('camobutton');
+        console.log(object.classList);
+        console.log("Fired");
+        camocount -= 1;
+        document.getElementById("totalcamos").innerHTML = ("Total Camos: " + camocount + "/204");
+        object.onclick = function() {redoClick(object)};
+    }
+}
+
+function redoClick(object)
+{
+    if(object.classList.contains('camobutton'))
+    {
+        object.classList.remove('camobutton');
+        object.classList.add('clicked');
+        console.log(object.classList);
+        console.log("Fired");
+        camocount += 1;
+        document.getElementById("totalcamos").innerHTML = ("Total Camos: " + camocount + "/204");
+        object.onclick = function() {undoClick(object)};
+    }
+}
+
+window.onload = function() {
+    var anchors = document.getElementsByClassName("camobutton");
+    for(var i = 0; i < anchors.length; i++)
+    {
+        anchors[i].onclick = function() {redoClick(this)};
+    }
+};
+
 
 //category buttons
 document.getElementById("arbutton").onclick = function() {showMenu("arlist")};
