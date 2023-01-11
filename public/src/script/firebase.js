@@ -23,6 +23,7 @@ const db = getFirestore(app);
 const provider = new GoogleAuthProvider();
 
 var uid = "";
+var selects = [];
 
 document.getElementById("signinbutton").onclick = function() {
   signInWithPopup(auth, provider)
@@ -34,7 +35,12 @@ document.getElementById("signinbutton").onclick = function() {
     const user = result.user;
     uid = user.uid;
     console.log("signed in as ",uid);
-
+    document.getElementById("signinbutton").style.display = "none";
+    const docRef = doc(db,"userdata",uid);
+    for(var i = 0; i < selects.length; i++)
+    {
+      setDoc(docRef, { [selects[i]]:true },{ merge:true });
+    }
   }).catch((error) => {
     // Handle Errors here.
     const errorCode = error.code;
@@ -44,7 +50,8 @@ document.getElementById("signinbutton").onclick = function() {
     // The AuthCredential type that was used.
     const credential = GoogleAuthProvider.credentialFromError(error);
     // ...
-  });};
+  });
+};
 
 onAuthStateChanged(auth, (user) => {
   if (user) {
@@ -476,6 +483,12 @@ function undoClick(object)
             const docRef = doc(db,"userdata",uid);
             setDoc(docRef, { [object.id]:false },{ merge:true });
         }
+        else
+        {
+          var index = selects.indexOf(this.id);
+          var firsthalf = selects.slice(0,index);
+          selects = firsthalf.concat(selects(index+1));
+        }
     }
 }
 
@@ -492,8 +505,12 @@ function redoClick(object)
         object.onclick = function() {undoClick(object)};
         if(uid != "")
         {
-            const docRef = doc(db,"userdata",uid);
-            setDoc(docRef, { [object.id]:true },{ merge:true });
+          const docRef = doc(db,"userdata",uid);
+          setDoc(docRef, { [object.id]:true },{ merge:true });
+        }
+        else
+        {
+          selects.push(this.id);
         }
     }
 }
