@@ -411,6 +411,11 @@ function undoClick(object)
         camocount -= 1;
         document.getElementById("totalcamos").innerHTML = ("Total Camos: " + camocount + "/204");
         object.onclick = function() {redoClick(object)};
+        if(uid != "")
+        {
+            const docRef = doc(db,"userdata",uid);
+            setDoc(docRef, { [object.id]:false },{ merge:true });
+        }
     }
 }
 
@@ -425,6 +430,11 @@ function redoClick(object)
         camocount += 1;
         document.getElementById("totalcamos").innerHTML = ("Total Camos: " + camocount + "/204");
         object.onclick = function() {undoClick(object)};
+        if(uid != "")
+        {
+            const docRef = doc(db,"userdata",uid);
+            setDoc(docRef, { [object.id]:true },{ merge:true });
+        }
     }
 }
 

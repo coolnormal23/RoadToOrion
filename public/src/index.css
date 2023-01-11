@@ -146,3 +146,21 @@ body {
 #logo {
     margin-left:25px;
 }
+
+#signinbutton {
+    background-color:#D9D9D9;
+    margin-right:20px;
+    padding-left:20px;
+    padding-right:20px;
+    border-radius:12px;
+}
+
+#signinbutton:hover {
+    background-color:#00FF38;
+}
+
+#signinbutton p {
+    color:black;
+    font-weight:bold;
+    margin-left:0px;
+}
