@@ -58,11 +58,11 @@ onAuthStateChanged(auth, (user) => {
   }
 });
 
-lastselect = "m4list";
-lastparent = "arbutton";
-lastlist = "arlist";
-lastlist2 = "m4-content";
-camocount = 0;
+var lastselect = "m4list";
+var lastparent = "arbutton";
+var lastlist = "arlist";
+var lastlist2 = "m4-content";
+var camocount = 0;
 
 function undoAll()
 {
