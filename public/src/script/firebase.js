@@ -5,7 +5,7 @@ import { getAnalytics } from 'https://www.gstatic.com/firebasejs/9.12.1/firebase
 
 // Add Firebase products that you want to use
 import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, onAuthStateChanged, GoogleAuthProvider, signInWithPopup } from 'https://www.gstatic.com/firebasejs/9.12.1/firebase-auth.js'
-import { getFirestore, collection, doc, addDoc, updateDoc, getDocs, getDoc } from 'https://www.gstatic.com/firebasejs/9.12.1/firebase-firestore.js'
+import { getFirestore, collection, doc, setDoc, addDoc, updateDoc, getDocs, getDoc } from 'https://www.gstatic.com/firebasejs/9.12.1/firebase-firestore.js'
 const firebaseConfig = {
   apiKey: "AIzaSyB4gEmDK44o11JcI2OILfdXfSUAFRysLng",
   authDomain: "roadtoorion.firebaseapp.com",
@@ -33,6 +33,7 @@ document.getElementById("signinbutton").onclick = function() {
     // The signed-in user info.
     const user = result.user;
     uid = user.uid;
+    console.log("signed in as ",uid);
 
   }).catch((error) => {
     // Handle Errors here.
