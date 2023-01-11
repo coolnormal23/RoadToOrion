@@ -7,13 +7,12 @@ import { getAnalytics } from 'https://www.gstatic.com/firebasejs/9.12.1/firebase
 import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, onAuthStateChanged, GoogleAuthProvider, signInWithPopup } from 'https://www.gstatic.com/firebasejs/9.12.1/firebase-auth.js'
 import { getFirestore, collection, doc, addDoc, updateDoc, getDocs, getDoc } from 'https://www.gstatic.com/firebasejs/9.12.1/firebase-firestore.js'
 const firebaseConfig = {
-  apiKey: "AIzaSyD4sfCEPkV0sdJ7yzgG6a1c2NNUDUY4-l4",
-  authDomain: "roadtoorion-991a3.firebaseapp.com",
-  projectId: "roadtoorion-991a3",
-  storageBucket: "roadtoorion-991a3.appspot.com",
-  messagingSenderId: "133029562370",
-  appId: "1:133029562370:web:c4f0400d4dbaa59b6f7f1b",
-  measurementId: "G-JDX161CX3D"
+  apiKey: "AIzaSyB4gEmDK44o11JcI2OILfdXfSUAFRysLng",
+  authDomain: "roadtoorion.firebaseapp.com",
+  projectId: "roadtoorion",
+  storageBucket: "roadtoorion.appspot.com",
+  messagingSenderId: "714110819367",
+  appId: "1:714110819367:web:7737f65b5e8d4a1c748202"
 };
 
 // Initialize Firebase
