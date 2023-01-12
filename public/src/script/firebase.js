@@ -43,8 +43,9 @@ document.getElementById("signinbutton").onclick = function() {
     }
     docRef.get().then((doc) => {
         if (doc.exists) {
-            console.log(doc.data().5451);
-        } else {
+            console.log(doc.data());
+        }
+        else {
             // doc.data() will be undefined in this case
             console.log("No such document!");
         }
