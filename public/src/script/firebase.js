@@ -27,7 +27,7 @@ var selects = [];
 
 document.getElementById("signinbutton").onclick = function() {
   signInWithPopup(auth, provider)
-  .then((result) => {
+  .then(async (result) => {
     // This gives you a Google Access Token. You can use it to access the Google API.
     const credential = GoogleAuthProvider.credentialFromResult(result);
     const token = credential.accessToken;
@@ -37,11 +37,11 @@ document.getElementById("signinbutton").onclick = function() {
     console.log("signed in as ",uid);
     document.getElementById("signinbutton").style.display = "none";
     const docRef = doc(db,"userdata",uid);
-    const docSnap = getDoc(docRef);
     for(var i = 0; i < selects.length; i++)
     {
       setDoc(docRef, { [selects[i]]:true },{ merge:true });
     }
+    const docSnap = await getDoc(docRef);
     if (docSnap.exists()) {
       console.log("Document data:", docSnap.data());
     } else {
