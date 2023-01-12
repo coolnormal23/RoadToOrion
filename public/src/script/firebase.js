@@ -49,6 +49,7 @@ document.getElementById("signinbutton").onclick = function() {
     const docSnap = await getDoc(docRef);
     if (docSnap.exists()) {
       var keys = Object.keys(docSnap.data());
+      console.log(keys);
       for(var i = 0; i < keys.length; i++)
       {
         if(keys[i] == true)
