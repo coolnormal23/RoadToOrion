@@ -41,6 +41,17 @@ document.getElementById("signinbutton").onclick = function() {
     {
       setDoc(docRef, { [selects[i]]:true },{ merge:true });
     }
+    docRef.get().then((doc) => {
+        if (doc.exists) {
+            console.log(doc.data().5451);
+        } else {
+            // doc.data() will be undefined in this case
+            console.log("No such document!");
+        }
+}).catch((error) => {
+    console.log("Error getting document:", error);
+});
+
   }).catch((error) => {
     // Handle Errors here.
     const errorCode = error.code;
