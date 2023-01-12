@@ -48,11 +48,12 @@ document.getElementById("signinbutton").onclick = function() {
     }
     const docSnap = await getDoc(docRef);
     if (docSnap.exists()) {
-      var keys = Object.keys(docSnap.data());
+      var data = docSnap.data();
+      var keys = Object.keys(data);
       console.log(keys);
       for(var i = 0; i < keys.length; i++)
       {
-        if(docSnap.data().keys[i] == true)
+        if(data.(keys[i]) == true)
         {
           var fieldobj = document.getElementById(keys[i]);
           fieldobj.classList.remove('camobutton');
