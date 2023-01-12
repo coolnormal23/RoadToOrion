@@ -52,7 +52,7 @@ document.getElementById("signinbutton").onclick = function() {
       console.log(keys);
       for(var i = 0; i < keys.length; i++)
       {
-        if(keys[i] == true)
+        if(docSnap.data().keys[i] == true)
         {
           var fieldobj = document.getElementById(keys[i]);
           fieldobj.classList.remove('camobutton');
