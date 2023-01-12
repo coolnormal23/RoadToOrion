@@ -24,6 +24,11 @@ const provider = new GoogleAuthProvider();
 
 var uid = "";
 var selects = [];
+var lastselect = "m4list";
+var lastparent = "arbutton";
+var lastlist = "arlist";
+var lastlist2 = "m4-content";
+var camocount = 0;
 
 document.getElementById("signinbutton").onclick = function() {
   signInWithPopup(auth, provider)
@@ -43,7 +48,16 @@ document.getElementById("signinbutton").onclick = function() {
     }
     const docSnap = await getDoc(docRef);
     if (docSnap.exists()) {
-      console.log("Document data:", docSnap.data());
+      var keys = Object.keys(docSnap.data());
+      for(var i = 0; i < keys.length; i++)
+      {
+        var fieldobj = document.getElementById(keys[i]);
+        fieldobj.classList.remove('camobutton');
+        fieldobj.classList.add('clicked');
+        console.log("Fired");
+        camocount += 1;
+        document.getElementById("totalcamos").innerHTML = ("Total Camos: " + camocount + "/204");
+      }
     } else {
       // doc.data() will be undefined in this case
       console.log("No such document!");
@@ -69,12 +83,6 @@ onAuthStateChanged(auth, (user) => {
     // ...
   }
 });
-
-var lastselect = "m4list";
-var lastparent = "arbutton";
-var lastlist = "arlist";
-var lastlist2 = "m4-content";
-var camocount = 0;
 
 function undoAll()
 {
