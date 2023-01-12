@@ -37,21 +37,17 @@ document.getElementById("signinbutton").onclick = function() {
     console.log("signed in as ",uid);
     document.getElementById("signinbutton").style.display = "none";
     const docRef = doc(db,"userdata",uid);
+    const docSnap = getDoc(docRef);
     for(var i = 0; i < selects.length; i++)
     {
       setDoc(docRef, { [selects[i]]:true },{ merge:true });
     }
-    docRef.get().then((doc) => {
-        if (doc.exists) {
-            console.log(doc.data());
-        }
-        else {
-            // doc.data() will be undefined in this case
-            console.log("No such document!");
-        }
-}).catch((error) => {
-    console.log("Error getting document:", error);
-});
+    if (docSnap.exists()) {
+      console.log("Document data:", docSnap.data());
+    } else {
+      // doc.data() will be undefined in this case
+      console.log("No such document!");
+    }
 
   }).catch((error) => {
     // Handle Errors here.
