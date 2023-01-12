@@ -51,12 +51,16 @@ document.getElementById("signinbutton").onclick = function() {
       var keys = Object.keys(docSnap.data());
       for(var i = 0; i < keys.length; i++)
       {
-        var fieldobj = document.getElementById(keys[i]);
-        fieldobj.classList.remove('camobutton');
-        fieldobj.classList.add('clicked');
-        console.log("Fired");
-        camocount += 1;
-        document.getElementById("totalcamos").innerHTML = ("Total Camos: " + camocount + "/204");
+        if(keys[i] == true)
+        {
+          var fieldobj = document.getElementById(keys[i]);
+          fieldobj.classList.remove('camobutton');
+          fieldobj.classList.add('clicked');
+          console.log("Fired");
+          camocount += 1;
+          document.getElementById("totalcamos").innerHTML = ("Total Camos: " + camocount + "/204");
+          fieldobj.onclick = function() {redoClick(this)};
+        }
       }
     } else {
       // doc.data() will be undefined in this case
@@ -84,13 +88,22 @@ onAuthStateChanged(auth, (user) => {
   }
 });
 
+//for side list
+function undoSome()
+{
+  document.getElementById(lastselect).style.fontWeight="normal";
+  document.getElementById(lastparent).style.fontWeight="normal";
+  document.getElementById(lastlist).style.display="none";
+}
+
+//for site content
 function undoAll()
 {
-    //undo all selects
-    document.getElementById(lastselect).style.fontWeight="normal";
-    document.getElementById(lastparent).style.fontWeight="normal";
-    document.getElementById(lastlist).style.display="none";
-    document.getElementById(lastlist2).style.display="none";
+  //undo all selects
+  document.getElementById(lastselect).style.fontWeight="normal";
+  document.getElementById(lastparent).style.fontWeight="normal";
+  document.getElementById(lastlist).style.display="none";
+  document.getElementById(lastlist2).style.display="none";
 }
 
 function showMenu(id)
@@ -100,7 +113,7 @@ function showMenu(id)
         case "arlist":
             {
                 //unbold and undo
-                undoAll();
+                undoSome();
                 //show gun list
                 document.getElementById("arlist").style.display="block";
                 //bold button
@@ -114,7 +127,7 @@ function showMenu(id)
         case "smglist":
             {
                 //unbold and undo
-                undoAll();
+                undoSome();
                 //show gun list
                 document.getElementById("smglist").style.display="block";
                 //bold button
@@ -128,7 +141,7 @@ function showMenu(id)
         case "brlist":
             {
                 //unbold and undo
-                undoAll();
+                undoSome();
                 //show gun list
                 document.getElementById("brlist").style.display="block";
                 //bold button
@@ -142,7 +155,7 @@ function showMenu(id)
         case "shotgunlist":
             {
                 //unbold and undo
-                undoAll();
+                undoSome();
                 //show gun list
                 document.getElementById("shotgunlist").style.display="block";
                 //bold button
@@ -156,7 +169,7 @@ function showMenu(id)
         case "lmglist":
             {
                 //unbold and undo
-                undoAll();
+                undoSome();
                 //show gun list
                 document.getElementById("lmglist").style.display="block";
                 //bold button
@@ -170,7 +183,7 @@ function showMenu(id)
         case "mrlist":
             {
                 //unbold and undo
-                undoAll();
+                undoSome();
                 //show gun list
                 document.getElementById("mrlist").style.display="block";
                 //bold button
@@ -184,7 +197,7 @@ function showMenu(id)
         case "sniperlist":
             {
                 //unbold and undo
-                undoAll();
+                undoSome();
                 //show gun list
                 document.getElementById("sniperlist").style.display="block";
                 //bold button
@@ -198,7 +211,7 @@ function showMenu(id)
         case "meleelist":
             {
                 //unbold and undo
-                undoAll();
+                undoSome();
                 //show gun list
                 document.getElementById("meleelist").style.display="block";
                 //bold button
@@ -212,7 +225,7 @@ function showMenu(id)
         case "handgunlist":
             {
                 //unbold and undo
-                undoAll();
+                undoSome();
                 //show gun list
                 document.getElementById("handgunlist").style.display="block";
                 //bold button
@@ -226,7 +239,7 @@ function showMenu(id)
         case "launcherlist":
             {
                 //unbold and undo
-                undoAll();
+                undoSome();
                 //show gun list
                 document.getElementById("launcherlist").style.display="block";
                 //bold button
@@ -487,6 +500,7 @@ function undoClick(object)
         object.onclick = object.classList.remove('clicked');
         object.classList.add('camobutton');
         console.log(object.classList);
+        console.log(object.id);
         console.log("Fired");
         camocount -= 1;
         document.getElementById("totalcamos").innerHTML = ("Total Camos: " + camocount + "/204");
@@ -498,9 +512,9 @@ function undoClick(object)
         }
         else
         {
-          var index = selects.indexOf(this.id);
+          var index = selects.indexOf(object.id);
           var firsthalf = selects.slice(0,index);
-          selects = firsthalf.concat(selects(index+1));
+          selects = firsthalf.concat(selects.slice(index+1,selects.length));
         }
     }
 }
@@ -523,7 +537,38 @@ function redoClick(object)
         }
         else
         {
-          selects.push(this.id);
+          selects.push(object.id);
+        }
+        if(object.id.includes("gold"))
+        {
+          console.log("contained gold");
+          var str = object.id.substring(0,(object.id.length-4));
+          for(var i = 1; i <= 4; i++)
+          {
+            var obj = document.getElementById(str.concat(i));
+            if(obj.classList.contains("camobutton"))
+            {
+              (function (obj) {
+                obj.classList.remove('camobutton');
+                obj.classList.add('clicked');
+                camocount += 1;
+                document.getElementById("totalcamos").innerHTML = ("Total Camos: " + camocount + "/204");
+                console.log(obj.classList);
+                console.log("Fired");
+                obj.onclick = null;
+                obj.onclick = (function() {undoClick(obj)});
+                if(uid != "")
+                {
+                  const docRef = doc(db,"userdata",uid);
+                  setDoc(docRef, { [obj.id]:true },{ merge:true });
+                }
+                else
+                {
+                  selects.push(obj.id);
+                }
+              })(obj);
+            }
+          }
         }
     }
 }

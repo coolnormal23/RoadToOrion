@@ -83,7 +83,6 @@ body {
     background-color:#5E5E5E;
     display:flex;
     flex-direction:column;
-    justify-content:center;
     align-items:center;
     padding:15px;
     margin-right:5px;
