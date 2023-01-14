@@ -41,7 +41,7 @@ document.getElementById("signinbutton").onclick = function() {
     uid = user.uid;
     console.log("signed in as ",uid);
     document.getElementById("signinbutton").style.display = "none";
-    document.getElementById("signooutbutton").style.display = "block";
+    document.getElementById("signoutbutton").style.display = "block";
     const docRef = doc(db,"userdata",uid);
     for(var i = 0; i < selects.length; i++)
     {
