@@ -27,7 +27,7 @@ var selects = [];
 var lastselect = "m4list";
 var lastparent = "arbutton";
 var lastlist = "arlist";
-var lastlist2 = "m4-content";
+var lastlist2 = "initialscreen";
 var camocount = 0;
 
 document.getElementById("signinbutton").onclick = function() {
@@ -41,6 +41,7 @@ document.getElementById("signinbutton").onclick = function() {
     uid = user.uid;
     console.log("signed in as ",uid);
     document.getElementById("signinbutton").style.display = "none";
+    document.getElementById("signooutbutton").style.display = "block";
     const docRef = doc(db,"userdata",uid);
     for(var i = 0; i < selects.length; i++)
     {
@@ -78,6 +79,16 @@ document.getElementById("signinbutton").onclick = function() {
   });
 };
 
+document.getElementById("signoutbutton").onclick = function() {
+    signOut(auth).then(() => {
+        // Sign-out successful.
+        document.getElementById("signooutbutton").style.display = "none";
+        document.getElementById("signinbutton").style.display = "block";
+      }).catch((error) => {
+        // An error happened.
+      });
+};
+
 onAuthStateChanged(auth, (user) => {
   if (user) {
     // User is signed in, see docs for a list of available properties
@@ -89,6 +100,13 @@ onAuthStateChanged(auth, (user) => {
     // ...
   }
 });
+
+//for home menu
+function goMenu()
+{
+    document.getElementById(lastlist2).style.display="none";
+    document.getElementById(lastselect).style.fontWeight="normal";
+}
 
 //for side list
 function undoSome()
@@ -112,6 +130,13 @@ function showMenu(id)
 {
     switch(id)
     {
+        case "initialscreen":
+            {
+                goMenu();
+                document.getElementById("initialscreen").style.display="block";
+                lastlist2 = "initialscreen";
+                break;
+            }
         case "arlist":
             {
                 //unbold and undo
@@ -595,6 +620,9 @@ document.getElementById("sniperbutton").onclick = function() {showMenu("sniperli
 document.getElementById("meleebutton").onclick = function() {showMenu("meleelist")};
 document.getElementById("handgunbutton").onclick = function() {showMenu("handgunlist")};
 document.getElementById("launcherbutton").onclick = function() {showMenu("launcherlist")};
+
+//special buttons
+document.getElementById("initialscreenbutton").onclick = function() {showMenu("initialscreen")};
 
 //assault rifles
 document.getElementById("m4list").onclick = function() {showMenu("m4-content")};

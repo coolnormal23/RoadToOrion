@@ -22,8 +22,9 @@ h1 {
     margin-left:5px;
 }
 
-#sitecontent h1 {
+#sitecontent h1, h2, h3, h4 {
     text-align:center;
+    color:white;
 }
 
 #sitecontent p {
@@ -111,6 +112,7 @@ body {
     padding-right:25px;
     display:flex;
     justify-content:center;
+    overflow:visible;
 }
 
 #sidebarentries {
@@ -127,6 +129,10 @@ body {
 
 #arlist, #brlist, #smglist, #lmglist, #shotgunlist, #mrlist, #sniperlist, #meleelist, #handgunlist, #launcherlist p {
     margin-left:10px;
+}
+
+#lachman556list, #lachman762list {
+    overflow:visible;
 }
 
 #sitecontent {
@@ -146,20 +152,37 @@ body {
     margin-left:25px;
 }
 
-#signinbutton {
+.custombutton {
     background-color:#D9D9D9;
+    display:flex;
     margin-right:20px;
     padding-left:20px;
     padding-right:20px;
     border-radius:12px;
+    flex-direction:column;
+    align-items:center;
 }
 
-#signinbutton:hover {
+.custombutton:hover {
     background-color:#00FF38;
 }
 
-#signinbutton p {
+.custombutton p {
     color:black;
     font-weight:bold;
     margin-left:0px;
+}
+
+#initialscreenbutton {
+    position:absolute;
+    bottom:20px;
+    padding-top:10px;
+}
+
+#initialscreenbutton p:hover {
+    color:black;
+}
+
+#signoutbutton {
+    display:none;
 }
